@@ -1,0 +1,21 @@
+{
+ "bodies": {
+  "farmer_man": "characters/farmer_man/farmer_man.fbx",
+  "farmer_woman": "characters/farmer_woman/farmer_woman.fbx",
+  "farmhand": "characters/farmhand/farmhand.fbx",
+  "mechworker": "characters/mechworker/mechworker.fbx",
+  "soldier": "characters/soldier/soldier.fbx",
+  "soldier_woman": "characters/soldier_woman/soldier_woman.fbx"
+ },
+ "clips": {
+  "idle": "packs/mixamo-motions/Breathing Idle.fbx",
+  "bored": "packs/mixamo-motions/Bored.fbx",
+  "look": "packs/mixamo-motions/Looking Around.fbx",
+  "talk": "packs/mixamo-motions/Talking (2).fbx",
+  "wave": "packs/mixamo-motions/Waving.fbx",
+  "cheer": "packs/mixamo-motions/Cheering.fbx",
+  "clap": "packs/mixamo-motions/Clapping.fbx",
+  "walk": "packs/Male Locomotion Pack 30FPS/walking.fbx",
+  "die": "packs/mixamo-motions/Falling Back Death.fbx"
+ }
+}

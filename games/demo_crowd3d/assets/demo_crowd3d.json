@@ -1,0 +1,26 @@
+{
+  "player": {
+    "speed": 4,
+    "pitch": 1.4,
+    "turnRate": 1.4,
+    "tiltRate": 0.9
+  },
+  "gate": {
+    "every": 2.5,
+    "length": 80,
+    "clip": "walk",
+    "speed": 1.6686,
+    "bodies": ["farmer_man", "farmer_woman", "farmhand", "mechworker", "soldier", "soldier_woman"]
+  },
+  "ground": {
+    "size": 140,
+    "colour": "#8c867c",
+    "roughness": 0.95
+  },
+  "crowd": {
+    "people": "crowd",
+    "height": 1.8,
+    "radius": 0.3,
+    "die": "die"
+  }
+}

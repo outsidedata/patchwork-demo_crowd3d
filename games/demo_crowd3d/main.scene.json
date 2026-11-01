@@ -1,0 +1,130 @@
+{
+  "world": {
+    "seed": 7,
+    "defs": "demo_crowd3d",
+    "loader": {
+      "assets": {
+        "demo_crowd3d": { "type": "json", "url": "/games/demo_crowd3d/assets/demo_crowd3d.json", "preload": true },
+        "crowd": { "type": "json", "url": "/games/demo_crowd3d/assets/crowd.json", "preload": true },
+        "farmer_man": { "type": "model", "url": "/games/demo_crowd3d/assets/farmer_man.glb", "preload": true },
+        "farmer_woman": { "type": "model", "url": "/games/demo_crowd3d/assets/farmer_woman.glb", "preload": true },
+        "farmhand": { "type": "model", "url": "/games/demo_crowd3d/assets/farmhand.glb", "preload": true },
+        "mechworker": { "type": "model", "url": "/games/demo_crowd3d/assets/mechworker.glb", "preload": true },
+        "soldier": { "type": "model", "url": "/games/demo_crowd3d/assets/soldier.glb", "preload": true },
+        "soldier_woman": { "type": "model", "url": "/games/demo_crowd3d/assets/soldier_woman.glb", "preload": true },
+        "sword": { "type": "model", "url": "/games/demo_crowd3d/assets/sword.glb", "preload": true },
+        "shield": { "type": "model", "url": "/games/demo_crowd3d/assets/shield.glb", "preload": true },
+        "helmet": { "type": "model", "url": "/games/demo_crowd3d/assets/helmet.glb", "preload": true }
+      }
+    },
+    "crowd3d": {
+      "bodies": {
+        "farmer_man": "farmer_man",
+        "farmer_woman": "farmer_woman",
+        "farmhand": "farmhand",
+        "mechworker": "mechworker",
+        "soldier": "soldier",
+        "soldier_woman": "soldier_woman"
+      },
+      "clips": ["idle", "bored", "look", "talk", "wave", "cheer", "clap", "walk", "die"],
+      "rate": 30,
+      "hold": ["die"],
+      "kinds": ["person"],
+      "poolSize": 2048,
+      "items": {
+        "sword": { "model": "sword", "rightHand": { "at": [0, 0.08, 0], "turn": [0, 0, -90] } },
+        "shield": { "model": "shield", "leftForearm": { "at": [0, 0.15, -0.07], "turn": [0, 180, 0] } },
+        "helmet": { "model": "helmet", "head": { "at": [0, 0.09, 0] } }
+      }
+    }
+  },
+  "plugins": [
+    "loader",
+    "scenemanager",
+    "player",
+    "crowd3d",
+    "environment3d",
+    "render3d",
+    "stats"
+  ],
+  "seats": 1,
+  "prefabs": {
+    "engine": {
+      "dt": 0.016666666666666666,
+      "width": 960,
+      "height": 540
+    },
+    "scenemanager": {
+      "out": {}
+    },
+    "loader": {},
+    "render3d": {
+      "camera": { "fov": 60, "near": 0.1, "far": 400, "at": [0, 1.7, -36], "look": [0, 1.5, 0] },
+      "pixelRatio": 2,
+      "tone": "neutral",
+      "exposure": 1,
+      "shadows": "soft",
+      "background": "#a9c4e0",
+      "ao": { "on": false, "radius": 0.5, "thickness": 1, "falloff": 1, "scale": 1, "intensity": 1, "samples": 16 },
+      "bloom": { "strength": 0.15, "radius": 0.4, "threshold": 1.5 }
+    },
+    "environment3d": {
+      "sun": {
+        "at": [30, 50, 20],
+        "color": "#fff1dc",
+        "power": 2.6,
+        "shadow": { "map": 2048, "half": 40, "near": 1, "far": 220, "distance": 110, "bias": -0.0004, "normalBias": 0.03 }
+      },
+      "sky": { "color": "#cfe0ff", "ground": "#6f6253", "power": 1.1 }
+    },
+    "ground": {},
+    "player": {
+      "seat": 0,
+      "pos": [0, 1.7, -36],
+      "view": [0, 0],
+      "stick": [0, 0],
+      "up": false,
+      "down": false,
+      "pace": 0,
+      "placed": false
+    },
+    "start": {
+      "slot": 0,
+      "pos": [0, 1.7, -36],
+      "view": [0, 0]
+    },
+    "gate": {
+      "pos": [0, 0, 0],
+      "yaw": 0,
+      "due": 0
+    },
+    "person": {
+      "pos": [0, 0, 0],
+      "to": [0, 0, 0],
+      "yaw": 0,
+      "speed": 0,
+      "body": "farmer_man",
+      "clip": "idle",
+      "since": 0,
+      "ends": 0,
+      "holding": {}
+    },
+    "crowd": {
+      "time": 0,
+      "placed": false
+    }
+  },
+  "actors": [
+    { "is": "scenemanager" },
+    { "is": "loader" },
+    { "is": "crowd" },
+    { "is": "start", "slot": 0, "pos": [0, 1.7, -36], "view": [0, -0.05] },
+    { "is": "ground" },
+    { "is": "gate", "pos": [-40, 0, -12.8], "yaw": 1.5707963267948966, "due": 0.1 },
+    { "is": "gate", "pos": [40, 0, -11.2], "yaw": -1.5707963267948966, "due": 1.3 },
+    { "is": "gate", "pos": [-40, 0, -0.8], "yaw": 1.5707963267948966, "due": 0.7 },
+    { "is": "gate", "pos": [40, 0, 0.8], "yaw": -1.5707963267948966, "due": 1.9 },
+    { "is": "gate", "pos": [-40, 0, 11.2], "yaw": 1.5707963267948966, "due": 0.4 },
+    { "is": "gate", "pos": [40, 0, 12.8], "yaw": -1.5707963267948966, "due": 1.6 }
+  ]
+}
