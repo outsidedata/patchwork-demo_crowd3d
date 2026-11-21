@@ -29,4 +29,5 @@ they stand and stay lying there.
   items.
 - `assets/crowd.mjs` writes the standing crowd, `assets/crowd.json`, each person with its body,
   clip, place, facing and what it holds (every soldier the kit).
-- `JOURNAL.md` is the experiment as it went (outsidedata/core#44).
+- The experiment as it went (outsidedata/core#44) is in the journal directory, `~/patchwork-journal/`:
+  `grep -ril "^game:.*demo_crowd3d" ~/patchwork-journal` finds it.
